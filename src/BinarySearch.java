@@ -22,4 +22,22 @@ public class BinarySearch {
         }
         return -1;
     }
+
+    public int binarySearchRecursive(int arr[], int left, int right, int target){
+        if(right >= left){
+            int mid = left + (right - left) /2;
+
+            if(arr[mid] == target){
+                return mid;
+            }
+
+            if(arr[mid] > target){
+                return binarySearchRecursive(arr, left, right, target);
+            }
+
+            return binarySearchRecursive(arr, mid+1, right, target);
+
+        }
+        return -1;
+    }
 }
